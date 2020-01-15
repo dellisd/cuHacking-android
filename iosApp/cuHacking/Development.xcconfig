@@ -1,0 +1,17 @@
+//
+//  Development.xcconfig
+//  cuHacking
+//
+//  Created by Santos on 2019-12-15.
+//  Copyright © 2019 cuHacking. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// Server URL
+ROOT_URL = https:/$()/cuhacking.com/api-dev
+
+// App Settings
+APP_NAME = cuHacking (dev)
+APP_BUNDLE_ID = com.cuhacking.app.dev

@@ -1,0 +1,13 @@
+/* 
+  CUHacking.strings
+  cuHacking
+
+  Created by Santos on 2019-10-20.
+  Copyright © 2019 cuHacking. All rights reserved.
+*/
+"information.headerCell.title" = "Cereomonies are in RB1234";
+"home.tabBar.title" = "Home";
+"home.navigationBar.title" = "cuHacking";
+"schedule.tabBar.title" = "Schedule";
+"map.tabBar.title" = "Map";
+"map.level" = "L%d";
