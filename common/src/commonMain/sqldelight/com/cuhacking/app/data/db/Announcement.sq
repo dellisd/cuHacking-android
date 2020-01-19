@@ -1,0 +1,21 @@
+import com.soywiz.klock.DateTimeTz;
+
+CREATE TABLE announcement(
+    id TEXT NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    description TEXT NOT NULL,
+    location TEXT,
+    deliveryTime TEXT AS DateTimeTz NOT NULL
+);
+
+insert:
+INSERT INTO announcement VALUES(:id, :name, :description, :location, :deliveryTime);
+
+delete:
+DELETE FROM announcement WHERE id = :id;
+
+getAll:
+SELECT * FROM announcement ORDER BY deliveryTime DESC;
+
+getById:
+SELECT * FROM announcement WHERE id = :id;

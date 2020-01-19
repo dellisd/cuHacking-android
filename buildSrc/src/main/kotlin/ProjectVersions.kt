@@ -34,7 +34,7 @@ object ProjectVersions {
     const val RETROFIT = "2.6.1"
     const val RETROFIT_SERIALIZATION = "0.4.0"
     const val SERIALIZATION = "0.11.0"
-    const val SQLDELIGHT = "1.2.0"
+    const val SQLDELIGHT = "1.2.1"
     const val SWIPE_REFRESH = "1.0.0"
     const val TEST_JUNIT = "1.1.1"
     const val TEST_RULES = "1.2.0"

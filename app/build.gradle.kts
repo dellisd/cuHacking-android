@@ -124,6 +124,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:${ProjectVersions.ESPRESSO_CORE}")
     androidTestImplementation("androidx.test:rules:${ProjectVersions.TEST_RULES}")
     androidTestImplementation("androidx.test.ext:junit:${ProjectVersions.TEST_JUNIT}")
+
+    implementation(project(":common"))
 }
 
 apply(plugin = "com.google.gms.google-services")
