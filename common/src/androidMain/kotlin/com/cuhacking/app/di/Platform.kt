@@ -4,6 +4,8 @@ import com.cuhacking.app.data.DATABASE_NAME
 import com.cuhacking.app.data.db.CuHackingDatabase
 import com.squareup.sqldelight.android.AndroidSqliteDriver
 import com.squareup.sqldelight.db.SqlDriver
+import io.ktor.client.HttpClient
+import io.ktor.client.engine.android.Android
 import org.kodein.di.Kodein
 import org.kodein.di.erased.bind
 import org.kodein.di.erased.instance
@@ -17,4 +19,6 @@ internal actual val platformModule = Kodein.Module(name = "Android") {
             DATABASE_NAME
         )
     }
+
+    bind<HttpClient>() with singleton { HttpClient(Android) }
 }

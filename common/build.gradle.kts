@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     id("com.android.library")
     kotlin("multiplatform")
+    id("kotlinx-serialization")
     id("com.squareup.sqldelight")
 }
 
@@ -33,7 +34,9 @@ android {
         }
     }
 
-    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> { kotlinOptions.jvmTarget = "1.8" }
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions.jvmTarget = "1.8"
+    }
 }
 
 sqldelight {
@@ -64,16 +67,21 @@ kotlin {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
         implementation("com.soywiz.korlibs.klock:klock:1.8.6")
         implementation("org.kodein.di:kodein-di-erased:6.5.1")
-        implementation("io.ktor:ktor-client-core:1.3.0")
+        implementation("io.ktor:ktor-client-core:${ProjectVersions.KTOR}")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:${ProjectVersions.SERIALIZATION}")
     }
 
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
         implementation("com.squareup.sqldelight:android-driver:${ProjectVersions.SQLDELIGHT}")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:${ProjectVersions.SERIALIZATION}")
+        implementation("io.ktor:ktor-client-android:${ProjectVersions.KTOR}")
     }
 
     sourceSets["iosMain"].dependencies {
         implementation("com.squareup.sqldelight:ios-driver:${ProjectVersions.SQLDELIGHT}")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:${ProjectVersions.SERIALIZATION}")
+        implementation("io.ktor:ktor-client-ios:${ProjectVersions.KTOR}")
     }
 }
 
